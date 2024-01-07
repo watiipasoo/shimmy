@@ -1,0 +1,48 @@
+import { Button, VerticalBox , LineEdit, GridBox} from "std-widgets.slint";
+
+export component AppWindow inherits Window {
+    
+    callback open-sveltekit();
+    callback open-github();
+    callback open-youtube();
+    callback open-supabase();
+
+   Rectangle {
+    background: #4B4453;
+    GridBox {
+        padding: 12px;
+        Row{
+            Text {
+                text: "Quick Nav";
+                color: white;
+                font-weight: 900;
+                font-size: 22px;
+                horizontal-alignment: center;
+                colspan: 2;
+            }
+        }
+
+        Row{
+            Button {
+                text: "Github";
+                clicked => {open-github()}
+            }
+            Button {
+                text: "Youtube";
+                clicked => {open-youtube()}
+            }
+        }
+
+        Row{
+            Button {
+                text: "Sveltekit";
+                clicked => {open-sveltekit()}
+            }
+            Button {
+                text: "Supabase";
+                clicked => {open-supabase()}
+            }
+        }
+    }
+   }
+}
